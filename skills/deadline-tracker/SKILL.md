@@ -26,8 +26,13 @@ Use synthetic or your own non-sensitive data only. The file holds plain text tit
 
 ## Procedure
 
-**1. If the `deadline_tracker` tool is available, use it and do not run the script.**
-(The A3 deployment exposes this tool from its own plugin and has the terminal disabled.)
+**1. Pick the path.** Look at the tools you were given in this session.
+- A tool named exactly `deadline_tracker` is in your tool list -> use it (step 2a).
+  Some deployments (like the A3 one, which has no terminal) provide it from a plugin.
+- No such tool (a normal Hermes install) -> run the bundled script (step 2b). Do not call
+  `deadline_tracker` and do not search for it: it does not exist there.
+
+**2a. Tool path** (only when `deadline_tracker` is listed):
 
 | Want | Tool call |
 |---|---|
@@ -36,8 +41,8 @@ Use synthetic or your own non-sensitive data only. The file holds plain text tit
 | complete | `deadline_tracker(action="complete", id="<id from list>")` |
 | due within N hours (incl. overdue) | `deadline_tracker(action="due_soon", hours=48)` |
 
-**2. Otherwise run the bundled script** with the terminal tool (Python 3.9+, standard
-library only):
+**2b. Script path** (default): run the bundled script with the terminal tool (Python
+3.9+, standard library only):
 
 ```bash
 python3 ${HERMES_SKILL_DIR}/scripts/deadlines.py list
