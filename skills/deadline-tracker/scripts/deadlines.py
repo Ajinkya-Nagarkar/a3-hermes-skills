@@ -42,8 +42,9 @@ def default_tz() -> ZoneInfo:
 
 
 def default_path() -> Path:
-    if os.environ.get("DEADLINES_FILE"):
-        return Path(os.environ["DEADLINES_FILE"]).expanduser()
+    explicit = os.environ.get("DEADLINES_FILE")
+    if explicit:
+        return Path(explicit).expanduser()
     home = os.environ.get("HERMES_HOME") or "~/.hermes"
     return Path(home).expanduser() / "deadlines.json"
 
