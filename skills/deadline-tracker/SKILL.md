@@ -9,6 +9,7 @@ metadata:
   hermes:
     tags: [Productivity, Deadlines, Reminders, Planning]
 ---
+<!-- Adapted from https://github.com/NousResearch/hermes-agent/blob/v0.22.7/website/docs/developer-guide/creating-skills.md - SKILL.md format (frontmatter, When to Use, Procedure) -->
 
 # Deadline Tracker
 
